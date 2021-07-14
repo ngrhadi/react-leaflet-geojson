@@ -67,16 +67,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
 <<<<<<< HEAD
+
 ## Buy me coffee
 
-This section just for fun: [https://saweria.co/niwasika]
-=======
+# This section just for fun: [https://saweria.co/niwasika]
+
 # For Indonesian Account
 
 Sawer baaang https://saweria.co/niwasika
->>>>>>> 23a3bd87cd6544a13975ba2d36008a8d0c59b453
+
+> > > > > > > 23a3bd87cd6544a13975ba2d36008a8d0c59b453
