@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { MapContainer, GeoJSON } from 'react-leaflet';
-import mapData from './../data/countries.json';
+import mapData from '../data/countries.json';
+import mapData2 from '../data/produksipadi.json';
 import 'leaflet/dist/leaflet.css';
 import './MyMap.css';
 
-class MyMap extends Component {
-  state = {};
-
-  componentDidMount() {
-    console.log(mapData);
-  }
-  countryStyle = {
+const MyMap = ({ ProduksiPadi }) => {
+  console.log(mapData);
+  console.log(mapData2);
+  const countryStyle = {
     fillColor: 'white',
     fillOpacity: 1,
     color: '#128383',
     weight: 1,
   };
 
-  render() {
-    return (
-      <div>
-        <MapContainer style={{ height: '100vh' }} className="markercluster-map" center={[-6.90931, 107.607]} zoom={3} maxZoom={18}>
-          <GeoJSON style={this.countryStyle} data={mapData.features} />
-        </MapContainer>
-      </div>
-    );
-  }
-}
+  const onEachKab = (kabupaten, layer) => {
+    layer.options.fillOpacity = kabupaten.properties.color;
+    const name = kabupaten.properties.WADMKC;
+    const luasPanen = kabupaten.properties.LUAS_PANEN;
+    layer.bindPopup(name + ' ' + luasPanen + ' Ha');
+  };
 
+  return (
+    <div>
+      <MapContainer style={{ height: '90vh' }} className="markercluster-map" zoom={10} maxZoom={18} center={[-6.42021, 108.167633]}>
+        <GeoJSON style={countryStyle} data={mapData.features} />
+        <GeoJSON style={legendItems} data={mapData2.features} onEachFeature={onEachKab} />
+      </MapContainer>
+    </div>
+  );
+};
 export default MyMap;
